@@ -1,0 +1,68 @@
+DISCLAIMER
+This tool IS NOT standalone application therefore it needs Android SDK and PowerShell to be installed and configured on your system before
+ the launch in order to work properly. 
+
+Notes:
+Versions of Android SDK Manager prior to version 23.0.0 are unable to recognize the latest Amazon SDK add-ons or extras.
+SDK Manager comes packaged with Android SDK Tools and shares the same version number. Install the latest version of
+Android SDK Tools to ensure that you have the latest version of Android SDK Manager.
+
+Device should be recognized by the system as "Android Composite ADB Interface" if not follow the steps:
+https://developer.amazon.com/public/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment
+
+Run console from Platform-tools folder and enter "adb device". List of connected devices should appear saying "device" next to s/n of
+your device
+
+To be able to run adb, aapt commands, ddms or monitor add following to the path variable of your system variables:
+D:\_McS\Android\platform-tools;D:\_McS\Android\build-tools\22.0.1;D:\_McS\Android\tools
+
+It could be convenient to mark Remember this computer check-box in USB Debugging dialogue on a device
+
+Change ExecutionPolicy to RemoteSigned to allow execution of signed scripts on your computer
+
+
+
+//compile to exe
+.\ps2exeNow.ps1 -inputFile D:\_McS\AndroidProjects\PSScriptMcS1.ps1 -outputFile D:\_McS\AndroidProjects\HoVTestIt.exe -sta -noconsole
+//PS and WPF
+http://blogs.technet.com/b/platformspfe/archive/2014/01/20/introduction-to-xaml.aspx
+http://blogs.technet.com/b/heyscriptingguy/archive/2010/03/22/hey-scripting-guy-march-22-2010.aspx
+http://blogs.technet.com/b/heyscriptingguy/archive/2014/08/01/i-39-ve-got-a-powershell-secret-adding-a-gui-to-scripts.aspx
+http://foxdeploy.com/2015/05/14/part-iii-using-advanced-gui-elements-in-powershell/
+//Wireless usage
+http://developer.android.com/tools/help/adb.html#commandsummary
+
+TODO
+
+
+PROJECT BACKLOG
+0. Compare Device ID and add Android ID
+1. Detect when no device attached (error message should appear)
+2. 
+3. Select particular apk to install (to be able to install different HoV versions or other additional APKs)
+4. Add functionality to operate with multiple devices
+5. Add Credits
+6. Add progress bar (or notifications on operation status)
+7. Wireless mode
+8. Take a screenshot
+9. Record a video
+10. Add overlay all functionality
+11. Run an app in memory limit mode
+12. 
+13. Sysem information update
+14. "exe stoped working" problem investigation
+15 !!! Sing the script
+
+DONE
+- App start FUNCTION
+- App restart FUNCTION
+- App force-close FUNCTION
+- Pull apk FUNCTION
+- Install apk FUNCTION
+- Uninstall apk FUNCTION
+- Device ID INFO
+- Android OS version INFO
+- Fire OS version INFO
+- Application build number INFO
+- Detect the actual apk file to Pull UPGRADE
+- Build .exe file from .ps1 UPGRADE
