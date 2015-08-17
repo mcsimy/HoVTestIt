@@ -55,8 +55,8 @@ $xaml.SelectNodes("//*[@Name]") | %{Set-Variable -Name ($_.Name) -Value $Form.Fi
 # Stores Android properties from adb shell getprop
 #===========================================================================
 
-$propDeviceID = adb shell getprop ro.serialno
-$propAndroidID = "N/A"
+$propDeviceID = adb shell settings get secure android_id #adb shell getprop ro.serialno
+$propAndroidID = adb shell getprop ro.product.model
 $propAndroidOS = adb shell getprop ro.build.version.release
 $propFireOS = adb shell getprop ro.build.version.fireos
 $propAppBuild = adb shell dumpsys package com.productmadness.hovmobile | Select-String -Pattern "versionName";
@@ -74,7 +74,8 @@ $pathPullFrom = adb shell pm path com.productmadness.hovmobile
 #===========================================================================
 
 $kill_button.Add_Click({
-                        adb shell am force-stop com.productmadness.hovmobile
+                        adb shell am force-stop com.productmadness.hovmobile;
+                        adb shell input keyevent 82                               #unlocks the screen
                         })
                         
 $launch_button.Add_Click({                        
