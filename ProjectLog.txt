@@ -51,7 +51,8 @@ PROJECT BACKLOG
 12. 
 13. Sysem information update
 14. "exe stoped working" problem investigation
-15 !!! Sing the script
+15. !!! Sign the script
+16. Daemon not running. Port change error
 
 DONE
 - App start FUNCTION
